@@ -5,23 +5,28 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from 'remix';
-import styles from './tailwind.css';
+} from 'remix'
+
+import globalCSS from './styles/global.css'
+import styles from './styles/tailwind.css'
 
 export const links = () => {
-  return [{ rel: 'stylesheet', href: styles }];
-};
+  return [
+    { rel: 'stylesheet', href: globalCSS },
+    { rel: 'stylesheet', href: styles },
+  ]
+}
 
 export function meta() {
-  return { title: "Kira's Blog" };
+  return { title: "Kira's Blog" }
 }
 
 export default function App() {
   return (
-    <html lang='en'>
+    <html lang="en">
       <head>
-        <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width,initial-scale=1' />
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
@@ -32,5 +37,5 @@ export default function App() {
         {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
-  );
+  )
 }

@@ -1,0 +1,5 @@
+public/
+api/build/
+api/index.js
+build/
+node_modules/
